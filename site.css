@@ -1,37 +1,104 @@
-main h1
-{
+body{
+	background-color: #F2FFFC;
+	font-family: "Crimson Text", serif;
+	font-size: 20px;
+	line-height: 1.5; /*Usa 1.5x o tamanho default da página em pixels. Assim, se o tamanho em pixels for 20px, o line-heigth será 30px*/
+}
+main div{
+	box-sizing: border-box;
+	width: 720px;
+	margin: auto;
+	padding: 30px 0;
+}
+.titulo-principal{
 	font-family: "Open Sans Condensed", sans-serif;
 	text-align: center;
-	color: #FFFFFF;
+	color: #F2FFFC;
 	background-color: rgb(120, 30, 60);
+	font-size: 60px;
+	padding: 20px;
+	margin: 0;
+	border-bottom: 10px solid #000000;
+	text-transform: uppercase;
 }
 h2{
+	font-size: 30px;
 	font-family: "Open Sans Condensed", sans-serif;
-	font-size: 40px;
 }
 p{
+	margin: 20px 0;
 	text-align: justify;
-	font-family: "Crimson Text";
+}
+blockquote{
+	background-color: #D3DDDA;
+	padding: 16px;
+	border: 10px solid #C2CCCA;
+	width: 250px;
+	margin: 20px 40px;
+	box-sizing: border-box; /*Outra forma de renderizacao: o navegador passa a contar, na hora de desenhar o elemento, o tamango dos paddings e bordas (que é, por default, ignorado geralmente) */
 }
 cite{
 	background-color: #D9E5E3;
 }
-nav{
-	background-color: #3C1D3D;
-	color: #F2FFFC;
+.titulo-navegacao{
+	font-size: 30px;
+	margin-bottom: 25px;
 }
-footer{
+.navegacao-site{
+    background-color: #3C1D3D;
+    color: #F2FFFC;
+    padding: 20px;
+    text-align: center;
+    text-transform: lowercase;
+}
+
+.social-media-links li{
+	display: inline-block;
+}
+
+.rodape-pagina{
 	background-color: #000000;
 	color: #F2FFFC;	
 }
+article {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
 ul {
     color: pink;
 }
-
-ul li a {
-    color: inherit;
+.navegacao-site ul li a {
+    color: #FFFFFF;
 }
-body{
-	font-family: "Times New Roman", sans-serif;
-	background-color: #F2FFFC; 
+strong{
+	font-weight: bold;
+}
+
+em{
+	font-style: oblique;
+}
+.leia-mais{
+    padding: 18px;
+    margin: 16px;
+    display: block;
+    text-align: center;
+    background-color: #E6E7E8;
+    color: #000000;
+}
+.social-media-links a{
+	width: 40px;
+	height: 40px;
+	display: inherit;
+	text-indent: -99999px;
+}
+.github{
+	background-image: url(Fornecidos%20pelo%20Curso/projeto/github.png);
+}
+.twitter{
+	background-image: url(Fornecidos%20pelo%20Curso/projeto/twitter.png);
+}
+.linkedin{
+	background-image: url(Fornecidos%20pelo%20Curso/projeto/linkedin.png);
 }
