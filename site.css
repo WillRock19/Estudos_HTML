@@ -4,11 +4,10 @@ body{
 	font-size: 20px;
 	line-height: 1.5; /*Usa 1.5x o tamanho default da página em pixels. Assim, se o tamanho em pixels for 20px, o line-heigth será 30px*/
 }
-main div{
+main {
 	box-sizing: border-box;
-	width: 720px;
-	margin: auto;
-	padding: 30px 0;
+	width: 85%;
+	float: left;
 }
 .titulo-principal{
 	font-family: "Open Sans Condensed", sans-serif;
@@ -21,9 +20,15 @@ main div{
 	border-bottom: 10px solid #000000;
 	text-transform: uppercase;
 }
+.conteudo-principal{
+	width: 720px;
+	margin: auto;
+	padding: 30px 0;
+}
 h2{
 	font-size: 30px;
 	font-family: "Open Sans Condensed", sans-serif;
+	clear: both;
 }
 p{
 	margin: 20px 0;
@@ -37,8 +42,16 @@ blockquote{
 	margin: 20px 40px;
 	box-sizing: border-box; /*Outra forma de renderizacao: o navegador passa a contar, na hora de desenhar o elemento, o tamango dos paddings e bordas (que é, por default, ignorado geralmente) */
 }
+.citacao-fiat{
+	float: right;
+}
+.citacao-mamae{
+	float: left;
+}
 cite{
 	background-color: #D9E5E3;
+	font: italic;
+	float: right;
 }
 .titulo-navegacao{
 	font-size: 30px;
@@ -50,15 +63,23 @@ cite{
     padding: 20px;
     text-align: center;
     text-transform: lowercase;
+    float: right;
 }
-
+.navegacao-site, .minha-foto{
+	float: right;
+	width: 15%;
+	box-sizing: border-box;
+	border-left: 10px solid black;
+    border-bottom: 10px solid black;
+}
 .social-media-links li{
 	display: inline-block;
 }
 
 .rodape-pagina{
 	background-color: #000000;
-	color: #F2FFFC;	
+	color: #F2FFFC;
+	clear: both;
 }
 article {
     padding-bottom: 30px;
