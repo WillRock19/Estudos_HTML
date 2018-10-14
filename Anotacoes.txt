@@ -1,0 +1,40 @@
+
+
+EM x REM
+
+    Valor do EM: é relativo ao tamanho de fonte do elemento no qual for usada. Exemplo:
+
+        p {
+            font-size: 20px;
+            margin: 1em;
+        }
+
+    No exemplo acima, em vale 1 * 20px = 20px de margem;
+
+    Valor do REM: É o tamanho de fonte do elemento html ou, se não houver tamanho de fonte definido neste elemento, 
+    o tamanho de fonte padrão do navegador. Exemplo:
+
+        html {
+            font-size: 25px;
+        }
+
+        p {
+            margin: 1rem;
+        }
+
+    No exemplo acima, rem vale 1 * 25px = 25px de margem.
+
+CH
+
+    Valor da medida: ele vale a largura do caracter "0" na fonte que se está utilizando.
+    Vale notar que existem algumas fontes em que todos os caracteres têm a mesma largura, que são as fontes conhecidas 
+    como monoespaçadas. Quando uma fonte dessas é usada, a medida ch permite definir com exatidão quantos caracteres 
+    vão aparecer por linha de texto do elemento em que for usada.
+
+PORCENTAGEM
+
+A medida porcentagem varia de acordo com a propriedade na qual é usada. 
+Se usada na propriedade font-size, é relativa ao tamanho de fonte do pai do elemento. 
+Se usada nas propriedades margin, padding e width, é relativa à largura do pai do elemento. 
+Por fim, se usada na propriedade height, é relativa à altura do pai do elemento.
+
