@@ -1,10 +1,12 @@
                                 PARTE II - Conceitos avançados e Boas práticas
 
-I. TAMANHOS DE FONTES
+I. UNIDADES DE MEDIDA
 
 1. Pixels
 
 Geralmente, usamos 'px', que representam o 'pixel' do monitor. O maior problema de usar pixels é que tudo fica estático;
+
+
 
 2. Porcentagem
 
@@ -14,42 +16,63 @@ Há também a de '%': o valor em porcentagem é referente ao elemento pai do ele
 
     Porcentagem SEMPRE usa de referência a LARGURA do pai do elemento em que o estilo estiver sendo aplicado.
 
-
-EM x REM
-
-    Valor do EM: é relativo ao tamanho de fonte do elemento no qual for usada. Exemplo:
-
-        p {
-            font-size: 20px;
-            margin: 1em;
-        }
-
-    No exemplo acima, em vale 1 * 20px = 20px de margem;
-
-    Valor do REM: É o tamanho de fonte do elemento html ou, se não houver tamanho de fonte definido neste elemento, 
-    o tamanho de fonte padrão do navegador. Exemplo:
-
-        html {
-            font-size: 25px;
-        }
-
-        p {
-            margin: 1rem;
-        }
-
-    No exemplo acima, rem vale 1 * 25px = 25px de margem.
-
-CH
-
-    Valor da medida: ele vale a largura do caracter "0" na fonte que se está utilizando.
-    Vale notar que existem algumas fontes em que todos os caracteres têm a mesma largura, que são as fontes conhecidas 
-    como monoespaçadas. Quando uma fonte dessas é usada, a medida ch permite definir com exatidão quantos caracteres 
-    vão aparecer por linha de texto do elemento em que for usada.
-
-PORCENTAGEM
-
 A medida porcentagem varia de acordo com a propriedade na qual é usada. 
 Se usada na propriedade font-size, é relativa ao tamanho de fonte do pai do elemento. 
 Se usada nas propriedades margin, padding e width, é relativa à largura do pai do elemento. 
 Por fim, se usada na propriedade height, é relativa à altura do pai do elemento.
 
+
+
+3. REM (tamanho da altura da fonte padrão do navegador)
+
+Essa unidade utiliza como referência o tamanho  de fonte do elemento html ou, se não houver tamanho definido 
+neste elemento, o tamanho de fonte padrão do navegador. Exemplo:
+
+                    1.25rem = 1.25 vezes a fonte do html{} ou do tamanho padrão do navegador
+
+Ou seja: se a fonte padrão do navegador for 20px, um <H1> que eu definir como 1.25rem terá 25px. 
+
+    Se a fonte padrão for 40px, o H1 com 1.25rem terá 50px, e assim por diante;
+
+
+
+4. CH (tamanho da largura da fonte padrão do navegador)
+
+Cada 1ch mede exatamente a largura do caracter '0' na fonte padrão do navegador. 
+
+Geralmente, essa medida pode ser usada para definir largura de elementos (por exemplo, de boxes que conterão textos)
+
+Valor da medida: ele vale a largura do caracter "0" na fonte que se está utilizando.
+
+Vale notar que existem algumas fontes em que todos os caracteres têm a mesma largura, que são as fontes conhecidas 
+como monoespaçadas. Quando uma fonte dessas é usada, a medida ch permite definir com exatidão quantos caracteres 
+vão aparecer por linha de texto do elemento em que for usada.
+
+
+
+5. EM 
+
+Usa como referência a altura padrão da fonte do elemento em que o estilo está sendo aplicado. Assim:
+
+    EM x REM
+
+        Valor do EM:
+
+            p {
+                font-size: 20px;
+                margin: 1em;
+            }
+
+        No exemplo acima, em vale 1em é o equivalente à "1 * 20px", que é igual à 20px de margem;
+
+        Valor do REM: 
+
+            html {
+                font-size: 25px;
+            }
+
+            p {
+                margin: 1rem;
+            }
+
+        No exemplo acima, 1rem vale "1 * 25px", que é igual à 25px de margem.
