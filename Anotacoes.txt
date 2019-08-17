@@ -1,3 +1,18 @@
+                                PARTE II - Conceitos avançados e Boas práticas
+
+I. TAMANHOS DE FONTES
+
+1. Pixels
+
+Geralmente, usamos 'px', que representam o 'pixel' do monitor. O maior problema de usar pixels é que tudo fica estático;
+
+2. Porcentagem
+
+Há também a de '%': o valor em porcentagem é referente ao elemento pai do elemento em que estou definindo o CSS. 
+
+    Assim, se eu defino que um elemento possui width de 50%, esses 50% serão referentes ao elemento pai. Se, nesse cenário, o pai possuir 500px de largura, o width do elemento com 50% será 250px;
+
+    Porcentagem SEMPRE usa de referência a LARGURA do pai do elemento em que o estilo estiver sendo aplicado.
 
 
 EM x REM
