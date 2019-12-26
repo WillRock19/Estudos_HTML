@@ -1,18 +1,18 @@
 blockquote{
 	background-color: #D3DDDA;
 	padding: 16px;
-	border: 10px solid #C2CCCA;
+	border: .5rem solid #C2CCCA;
 	width: 250px;
-	margin: 20px 40px;
+	margin: 1rem 2rem;
 	box-sizing: border-box; /*Outra forma de renderizacao: o navegador passa a contar, na hora de desenhar o elemento, o tamango dos paddings e bordas (que é, por default, ignorado geralmente) */
 }
 .citacao-fiat{
 	float: right;
-	margin-right: 0px;
+	margin-right: 0;
 }
 .citacao-mamae{
 	float: left;
-	margin-left: 0px;
+	margin-left: 0;
 }
 cite{
 	background-color: #D9E5E3;

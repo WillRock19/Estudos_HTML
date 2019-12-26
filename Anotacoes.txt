@@ -76,3 +76,107 @@ Usa como referência a altura padrão da fonte do elemento em que o estilo está
             }
 
         No exemplo acima, 1rem vale "1 * 25px", que é igual à 25px de margem.
+
+
+
+II. TIRAR ELEMENTOS DO FLUXO DA P[AGINA
+
+Posso usar a propriedade FLOAT e a propriedade POSITION: ABSOLUTE ou POSITION: FIXED;
+
+    Float: faz com que algo possa "flutuar" no ponto oposto à qual o elemento é posicionado;
+
+    Fixed: mantém o elemento congelado em um ponto da tela;
+
+    Absolute: tira o elemento do fluxo e mantém ele em um ponto da tela;
+    
+        As demais propriedades (top, left, right, etc) vão ajudar a posicionar o elemento relativo ao primeiro pai que tiver um "position" definido.
+            Em outras palavras: 
+            
+            <body>
+                <div>
+                    <span></span>
+                <div>
+            </body>
+
+            No exemplo acima, se eu colocar position: absolute no elemento span e um top:0, ele terá dois comportamentos:
+
+                Caso o div possua um position definido: vai posicionar com top:0 em relação ao elemento DIV;
+
+                Caso o div não possua um position definido: vai posicionar com top:0 em relação ao corpo principal da pagina;
+
+            Se eu colocar na DIV um position:relative, faço com que o DIV não mude seu posicionamento, mas qualquer propriedade do SPAN use a DIV como referencial (top, right, left, etc.)
+
+            O único valor que não faria que a DIV se tornasse referência seria um position:static
+
+                Como o valor static é o padrão para a propriedade position o comportamento dos elementos filhos do elemento não será afetado.
+
+
+III. TRANSFORM (pode não ter suporte à todos os navegadores)
+
+III.1. Geral
+
+Permite adicionar efeitos em um elemento (torná-lo tridimensional, fazer com que ele fique lateralizado, etc.). Tem algumas propriedades:
+
+    rotate: permite rotacionar um elemento. Unidade é 'deg', de 'degrees';
+
+    scale: permite transformar a escala de um elemento (torna ele maior se o valor informado for maior que 1, e menor se o valor informado for menor que 1);
+
+        Exemplo: Aumentar uma div em 50%
+
+            div {
+                transform: scale(1.5);
+            }
+
+    skew: permite 'entortar' uma caixa para a direita ou esquerda. Unidade é 'deg', de 'degrees';
+
+    translate: permite deslocar um elemento para outras posições da tela (o resultado é algo parecido com o das propriedades 'position');
+
+
+IMPORTANTE: transformações não funcionam com elementos inline. Para aplicá-las, é necessário transformá-los em outro tipo (como inline-block).
+
+
+III.2. Transformações 3D
+    
+Nelas, temos três eixos com que nos preocupar (imagine um cubo, com eixo X, Y e Z);
+
+    Para acessar cada um desses eixos e aplicar as propriedades supracitadas, podemos apenas especificar o eixo em que queremos aplicar algo.
+
+        Exemplo: translateX, translateY e translateZ
+
+Para aplicar efeitos tridimensionais, precisamos usar os efeitos de luz e a perspectiva do usuário, que ajudam a simular o efeito de algo 3D.
+
+    perspective: propriedade que permite controlar a perspectiva que um elemento irá ter aos olhos do usuário.
+
+        Imagine que você vê duas bolinhas uma mais longe que a outra. Quanto mais distante você fica do monitor, mais essas duas parecem estar próximas uma da outra. Quanto mais distante, mais elas parecem estar longe uma da outra, já que as diferenças do tamanho faz parecer que há uma distância entre as duas.
+
+    perspective-origin: é como definimos de que direção o usuário estaria olhando, para definir qual o efeito de perspectiva que ele receberá
+
+    Exemplo: Imagine várias bolas na tela, sendo que queremos que a bola1 pareça mais próxima que a bola2
+
+        <div class="bolas">
+            <div class="bola1"></div>
+            <div class="bola2"></div>
+            <div class="bola3"></div>
+        </div>
+
+        .bolas{
+            perspective: 4px;
+        }
+
+        .bola1{
+            transform: translateZ(2px);
+        }
+        .bola2{
+            transform: translateZ(-1px);
+        }
+
+        Neste exemplo, definimos que a perspectiva do usuário está em 4px, ou seja, 4px seria a unidade imaginária que define a distância entre o usuário e a tela 
+            Não são, necessariamente, 4 pixels, mas apenas uma unidade de medida que podemos usar como referência para calcular a profundidade dos outros elementos
+
+        A bola1 está a 2px no eixo Z, ou seja, mais próxima do usuário (4px) do que a bola2, que está a -1 px;
+
+    Podemos ter "cenas" (objetos) 3D dentro de outros. Nesse sentido, precisamos que o elemento pai consiga enxergar as transformações 3D dos filhos, e continua exibindo todas.
+
+    Para isso, usamos a propriedade 'transform-style: preserve-3d' no elemento pai
+
+    
